@@ -1,7 +1,7 @@
-<footer>
+<footer class="bg-light footer">
     <div class="container">
         <div class="row">
-            <div class="col-12 d-flex justify-content-between">
+            <div class="col-12 d-flex flex-column flex-md-row justify-content-between">
                 <div>
                     <p>Copyright</p>
                 </div>
