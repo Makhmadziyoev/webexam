@@ -20,3 +20,7 @@
     height: 50px;
     margin-right: 10px;
 }
+
+.input-group{
+    max-width: 200px;
+}

@@ -1,3 +1,18 @@
+<?php
+    $sum = 0;
+    if($_SERVER['REQUEST_METHOD'] == 'POST') {
+        if (isset($_POST['submit'])){
+            if(isset($_POST['countAdult']) && isset($_POST['countChild']) && isset($_POST['countDays']) && isset($_POST['basePrice'])){    $countAdult = $_POST['countAdult'];
+                $countChild = $_POST['countChild'];
+                $countDays = $_POST['countDays'];
+                $basePrice = $_POST['basePrice'];
+                $sum = ($countAdult + ($countChild*0.5)) * $countDays * $basePrice;
+            } else {
+                $sum = "Получены не все значения";
+            }
+        }
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,59 +27,11 @@
 
     <?php include("components/cards.php") ?>
 
-    <section class="section">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <h2>Lorem insut</h2>
-                    <hr>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A alias assumenda debitis, dolorum eaque fugit illum inventore iure laboriosam molestias necessitatibus, nihil odit officiis pariatur quae reiciendis repellat saepe voluptatum!</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid animi consequuntur delectus dicta, ducimus enim error facere harum illum in inventore labore magnam maiores minus perferendis quidem quisquam, reiciendis sequi?</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <h2>Lorem insut</h2>
-                    <hr>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A alias assumenda debitis, dolorum eaque fugit illum inventore iure laboriosam molestias necessitatibus, nihil odit officiis pariatur quae reiciendis repellat saepe voluptatum!</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <?php include("components/text.php") ?>
 
-    <section class="section">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <h2>Контакты</h2>
-                    <hr>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12 col-md-8">
-                    <img class="map" src="img/map.png" alt="">
-                </div>
-                <div class="col-12 col-md-4">
-                    <h2>Офис</h2>
-                    <p>г. Москва</p>
-                    <p>г. Москва</p>
-                    <hr>
-                    <h2>Телефоны:</h2>
-                    <p>9999999</p>
-                    <p>9999999</p>
-                    <p>9999999</p>
-                    <hr>
-                    <h2>Мы в социальных сетях:</h2>
-                    <div class="d-flex">
-                        <img class="social_img" src="img/facebook.png" alt="">
-                        <img class="social_img" src="img/facebook.png" alt="">
-                        <img class="social_img" src="img/facebook.png" alt="">
-                    </div>
-                    <hr>
-                </div>
-            </div>
-        </div>
-    </section>
+    <?php include("components/form.php") ?>
+
+    <?php include("components/contacts.php") ?>
 
     <?php include("components/footer.php") ?>
 
